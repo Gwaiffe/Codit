@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block content%}
+{%for saving in savings%}
+<div class="card mb-3">
+    <h4 class="card-header">{{saving.date}}</h4>
+    <div class="card-body">
+        <p>Amount saved:{{saving.amount}}</p>
+    </div>
+</div>
+{%empty%}
+<p>No savings yet.</p>
+{%endfor%}
+{%endblock content%}

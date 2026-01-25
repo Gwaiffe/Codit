@@ -1,0 +1,16 @@
+{%extends 'base1.html'%}
+{%block page_header%}<h2>{{member.full_name}}'s savings:</h2>{%endblock page_header%}
+{%block content%}
+{%for saving in savings%}
+<div class="card mb-3">
+    <h4 class="card-header">{{saving.date}} <small><em><a href="{% url 'admins:delete_save' saving.id %}"
+                    onclick="return confirm('Are you sure?')">delete_savings</a></em></small></h4>
+    <div class="card-body">
+        <p>Amount saved:{{saving.amount}}</p>
+    </div>
+</div>
+{%empty%}
+<p>No savings yet.</p>
+{%endfor%}
+<a href="{% url 'admins:new_save' member.id %}">Add on savings</a>
+{%endblock content%}

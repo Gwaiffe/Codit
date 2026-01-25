@@ -1,0 +1,9 @@
+{% extends "D:\files\pythonn\PROJECTS\project1\learning_logs\Templates\base.html" %}
+{%load django_bootstrap5%}
+{% block content %}
+<form action="{% url 'accounts:register' %}" method='post'>
+    {% csrf_token %}
+    {%bootstrap_form form%}
+    {%bootstrap_button button_type='submit' content='Register'%}
+</form>
+{% endblock content %}
