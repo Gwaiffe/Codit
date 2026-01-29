@@ -1,9 +1,0 @@
-{%extends 'base.html'%}
-{%block content%}
-<p>Add post:</p>
-<form action="{%url 'blog:add_post'%}" enctype='multipart/form-data' method="post">
-    {%csrf_token%}
-    {{form.as_div}}
-    <button name="submit">Add Post</button>
-</form>
-{%endblock content%}
